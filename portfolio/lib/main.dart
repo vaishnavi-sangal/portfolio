@@ -235,8 +235,9 @@ class _MyHomePageState extends State<MyHomePage> {
           duration: const Duration(milliseconds: 1800),
           child: AppButtons.buildMaterialButton(
               onTap: () {
-                // launchURL(
-                //    'https://drive.google.com/file/d/1V_dgikOvorZBzhFAt5cqShijqtTg6hfv/view?usp=share_link');
+                launchURL(
+                    url:
+                        'https://drive.google.com/file/d/1V_dgikOvorZBzhFAt5cqShijqtTg6hfv/view?usp=share_link');
               },
               buttonName: 'Download Resume'),
         ),
