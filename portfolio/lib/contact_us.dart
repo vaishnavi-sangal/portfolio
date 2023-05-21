@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/app_buttons.dart';
 import 'package:portfolio/helper_class.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../app_colors.dart';
 import '../app_text_styles.dart';
 import '../constants.dart';
@@ -167,7 +168,7 @@ class ContactUs extends StatelessWidget {
         ),
         Constants.sizedBox(height: 40.0),
         AppButtons.buildMaterialButton(
-            buttonName: 'Send Message', onTap: () {}),
+            buttonName: 'Send Message', onTap: () => launchEmail()),
         Constants.sizedBox(height: 30.0),
       ],
     );
@@ -206,5 +207,12 @@ class ContactUs extends StatelessWidget {
         fillColor: Appcolors.bgColor2,
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 24, vertical: 16));
+  }
+}
+
+launchEmail() async {
+  const url = "mailto:vaishnavisangal787@gmail.com";
+  if (!await launchUrl(Uri.parse(url))) {
+    throw 'Could not launch $url';
   }
 }

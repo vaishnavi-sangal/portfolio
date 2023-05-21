@@ -24,53 +24,122 @@ class _MyServicesState extends State<MyServices> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return HelperClass(
-      mobile: Column(
-        // mainAxisSize: MainAxisSize.min,
-        children: [
-          buildMyServicesText(),
-          Constants.sizedBox(height: 60.0),
-          InkWell(
-            onTap: () {},
-            onHover: (value) {
-              setState(() {
-                isApp = value;
-              });
-            },
-            child: buildAnimatedContainer(
-              title: 'HTML',
-              asset: AppAssets.html,
-              hover: isApp,
+      mobile: Container(
+        height: 1000,
+        width: double.infinity,
+        child: Column(
+          // mainAxisSize: MainAxisSize.min,
+          children: [
+            buildMyServicesText(),
+            Constants.sizedBox(height: 60.0),
+            Row(
+              children: [
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'HTML',
+                  asset: AppAssets.html,
+                  hover: isApp,
+                ),
+                SizedBox(width: 20),
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'CSS',
+                  asset: AppAssets.css,
+                  hover: isGraphic,
+                ),
+                SizedBox(width: 20),
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'Figma',
+                  asset: AppAssets.figma,
+                  hover: isGraphic,
+                ),
+              ],
             ),
-          ),
-          Constants.sizedBox(height: 24.0),
-          InkWell(
-            onTap: () {},
-            onHover: (value) {
-              setState(() {
-                isGraphic = value;
-              });
-            },
-            child: buildAnimatedContainer(
-              title: 'CSS',
-              asset: AppAssets.html,
-              hover: isGraphic,
+            Constants.sizedBox(height: 24.0),
+            Row(
+              children: [
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'C++',
+                  asset: AppAssets.c,
+                  hover: isApp,
+                ),
+                SizedBox(width: 20),
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'Java',
+                  asset: AppAssets.java,
+                  hover: isGraphic,
+                ),
+                SizedBox(width: 20),
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'Pyhton',
+                  asset: AppAssets.py,
+                  hover: isGraphic,
+                ),
+              ],
             ),
-          ),
-          Constants.sizedBox(height: 24.0),
-          InkWell(
-            onTap: () {},
-            onHover: (value) {
-              setState(() {
-                isDataAnalyst = value;
-              });
-            },
-            child: buildAnimatedContainer(
-              title: 'Dart',
-              asset: AppAssets.html,
-              hover: isDataAnalyst,
+            Constants.sizedBox(height: 24.0),
+            Row(
+              children: [
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'MySql',
+                  asset: AppAssets.mysql,
+                  hover: isApp,
+                ),
+                SizedBox(width: 20),
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'Github',
+                  asset: AppAssets.github,
+                  hover: isGraphic,
+                ),
+                SizedBox(width: 20),
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'Dart',
+                  asset: AppAssets.dart,
+                  hover: isGraphic,
+                ),
+              ],
             ),
-          )
-        ],
+            Constants.sizedBox(height: 24.0),
+            Container(
+              width: double.infinity,
+              child: Row(
+                //
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'Flutter',
+                    asset: AppAssets.flutter,
+                    hover: isApp,
+                  ),
+                  SizedBox(width: 20),
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'Firebase',
+                    asset: AppAssets.firebase,
+                    hover: isGraphic,
+                  ),
+                  SizedBox(width: 20),
+                  Flexible(
+                    child: buildAnimatedContainer(
+                      width: 150,
+                      title: 'VS Code',
+                      asset: AppAssets.vs,
+                      hover: isGraphic,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       tablet: Column(
         mainAxisSize: MainAxisSize.min,
@@ -88,7 +157,7 @@ class _MyServicesState extends State<MyServices> {
                   });
                 },
                 child: buildAnimatedContainer(
-                  title: 'App Development',
+                  title: 'HTML',
                   asset: AppAssets.html,
                   hover: isApp,
                 ),
@@ -102,7 +171,7 @@ class _MyServicesState extends State<MyServices> {
                   });
                 },
                 child: buildAnimatedContainer(
-                  title: 'Graphic Designing',
+                  title: 'CSS',
                   asset: AppAssets.html,
                   hover: isGraphic,
                 ),
@@ -118,7 +187,7 @@ class _MyServicesState extends State<MyServices> {
               });
             },
             child: buildAnimatedContainer(
-              title: 'Digital Marketing',
+              title: 'Dart',
               asset: AppAssets.html,
               hover: isDataAnalyst,
               width: 725.0,
@@ -143,7 +212,7 @@ class _MyServicesState extends State<MyServices> {
                   });
                 },
                 child: buildAnimatedContainer(
-                  title: 'App Development',
+                  title: 'HTML',
                   asset: AppAssets.html,
                   hover: isApp,
                 ),
@@ -157,7 +226,7 @@ class _MyServicesState extends State<MyServices> {
                   });
                 },
                 child: buildAnimatedContainer(
-                  title: 'Graphic Designing',
+                  title: 'CSS',
                   asset: AppAssets.html,
                   hover: isGraphic,
                 ),
@@ -171,7 +240,7 @@ class _MyServicesState extends State<MyServices> {
                   });
                 },
                 child: buildAnimatedContainer(
-                  title: 'Digital Marketing',
+                  title: 'Dart',
                   asset: AppAssets.html,
                   hover: isDataAnalyst,
                 ),
@@ -208,13 +277,13 @@ class _MyServicesState extends State<MyServices> {
     required String title,
     required String asset,
     required bool hover,
-    double width = 350,
+    double width = 300,
     double hoverWidth = 360,
   }) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      width: hover ? hoverWidth : width,
-      height: hover ? 390 : 380,
+      // width: hover ? hoverWidth : width,
+      //height: hover ? 390 : 380,
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 24),
       decoration: BoxDecoration(
@@ -230,20 +299,23 @@ class _MyServicesState extends State<MyServices> {
           )
         ],
       ),
-      child: Column(
-        children: [
-          Image.asset(
-            AppAssets.html,
-            width: 50,
-            height: 50,
-            color: Appcolors.co,
-          ),
-          Constants.sizedBox(height: 30.0),
-          Text(
-            title,
-            style: AppTextStyles.ei(color: Colors.white, fontSize: 22.0),
-          ),
-        ],
+      child: Container(
+        height: 150,
+        child: Column(
+          children: [
+            Image.asset(
+              asset,
+              width: 50,
+              height: 50,
+              // color: Appcolors.co,
+            ),
+            Constants.sizedBox(height: 30.0),
+            Text(
+              title,
+              style: AppTextStyles.h(),
+            ),
+          ],
+        ),
       ),
     );
   }

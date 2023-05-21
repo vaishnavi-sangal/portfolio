@@ -1,13 +1,12 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/app_assets.dart';
-import 'package:portfolio/helper_class.dart';
-import '../app_colors.dart';
-import '../app_text_styles.dart';
-import '../constants.dart';
-import 'app_assets.dart';
-import 'constants.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'app_buttons.dart';
 import 'helper_class.dart';
+import 'app_colors.dart';
+import 'app_text_styles.dart';
+import 'constants.dart';
 
 class MyPortfolio extends StatefulWidget {
   const MyPortfolio({Key? key}) : super(key: key);
@@ -20,150 +19,284 @@ class _MyPortfolioState extends State<MyPortfolio> {
   final onH0verEffect = Matrix4.identity()..scale(1.0);
 
   var hoveredIndex;
+  bool isApp = false, isGraphic = false, isDataAnalyst = false;
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return HelperClass(
       mobile: Column(
-        mainAxisSize: MainAxisSize.min,
+        // mainAxisSize: MainAxisSize.min,
         children: [
-          // buildProjectText(),
-          Constants.sizedBox(height: 40.0),
-          // buildProjectGridView(crossAxisCount: 1)
+          buildMyServicesText(),
+          Constants.sizedBox(height: 60.0),
+          InkWell(
+            onTap: () => launchURL(
+                url:
+                    'https://drive.google.com/file/d/1dnnAlnJilQo0ArU9NXctP1PmiCcfJgcN/view'),
+            onHover: (value) {
+              setState(() {
+                isApp = value;
+              });
+            },
+            child: buildAnimatedContainer(
+              link:
+                  'https://drive.google.com/file/d/1dnnAlnJilQo0ArU9NXctP1PmiCcfJgcN/view',
+              description:
+                  'It is a Women Security App that lets them take a leap that they can count on someone and I made sure that “SOMEONE” will be none other but their own contacts which they can send alerts, locations, and much more.',
+              title: 'Women Security App',
+              asset: AppAssets.p1,
+              hover: isApp,
+            ),
+          ),
+          Constants.sizedBox(height: 24.0),
+          InkWell(
+            onTap: () => launchURL(
+                url:
+                    'https://github.com/vaishnavi-sangal/TMDB_API/tree/main/movie_app'),
+            onHover: (value) {
+              setState(() {
+                isGraphic = value;
+              });
+            },
+            child: buildAnimatedContainer(
+              link:
+                  'https://github.com/vaishnavi-sangal/TMDB_API/tree/main/movie_app',
+              description:
+                  'A movie app which fetches data from TMDB_API to show the trending movies,tv shows and top rated movies.',
+              title: 'Movie App',
+              asset: AppAssets.p2,
+              hover: isGraphic,
+            ),
+          ),
+          Constants.sizedBox(height: 24.0),
+          InkWell(
+            onTap: () =>
+                launchURL(url: 'https://github.com/vaishnavi-sangal/instagram'),
+            onHover: (value) {
+              setState(() {
+                isDataAnalyst = value;
+              });
+            },
+            child: buildAnimatedContainer(
+              link: 'https://github.com/vaishnavi-sangal/instagram',
+              description:
+                  'This is Open Source Instagram Clone made using Flutter and Firebase.',
+              title: 'Picstagram',
+              asset: AppAssets.p3,
+              hover: isDataAnalyst,
+            ),
+          )
         ],
       ),
       tablet: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          //buildProjectText(),
-          Constants.sizedBox(height: 40.0),
-          // buildProjectGridView(crossAxisCount: 2)
+          buildMyServicesText(),
+          Constants.sizedBox(height: 60.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                onTap: () {},
+                onHover: (value) {
+                  setState(() {
+                    isApp = value;
+                  });
+                },
+                child: buildAnimatedContainer(
+                  link: '',
+                  description: '',
+                  title: 'App Development',
+                  asset: AppAssets.p1,
+                  hover: isApp,
+                ),
+              ),
+              Constants.sizedBox(width: 24.0),
+              InkWell(
+                onTap: () {},
+                onHover: (value) {
+                  setState(() {
+                    isGraphic = value;
+                  });
+                },
+                child: buildAnimatedContainer(
+                  link: '',
+                  description: '',
+                  title: 'Graphic Designing',
+                  asset: AppAssets.p2,
+                  hover: isGraphic,
+                ),
+              ),
+            ],
+          ),
+          Constants.sizedBox(height: 26.0),
+          InkWell(
+            onTap: () {},
+            onHover: (value) {
+              setState(() {
+                isDataAnalyst = value;
+              });
+            },
+            child: buildAnimatedContainer(
+              link: '',
+              description: '',
+              title: 'Digital Marketing',
+              asset: AppAssets.p3,
+              hover: isDataAnalyst,
+              width: 725.0,
+              hoverWidth: 735.0,
+            ),
+          )
         ],
       ),
       desktop: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          //  buildProjectText(),
-          Constants.sizedBox(height: 40.0),
-          //  buildProjectGridView(crossAxisCount: 3),
+          buildMyServicesText(),
+          Constants.sizedBox(height: 60.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                onTap: () {},
+                onHover: (value) {
+                  setState(() {
+                    isApp = value;
+                  });
+                },
+                child: buildAnimatedContainer(
+                  link: '',
+                  description: '',
+                  title: 'App Development',
+                  asset: AppAssets.p1,
+                  hover: isApp,
+                ),
+              ),
+              Constants.sizedBox(width: 24.0),
+              InkWell(
+                onTap: () {},
+                onHover: (value) {
+                  setState(() {
+                    isGraphic = value;
+                  });
+                },
+                child: buildAnimatedContainer(
+                  link: '',
+                  description: '',
+                  title: 'Graphic Designing',
+                  asset: AppAssets.p2,
+                  hover: isGraphic,
+                ),
+              ),
+              Constants.sizedBox(width: 24.0),
+              InkWell(
+                onTap: () {},
+                onHover: (value) {
+                  setState(() {
+                    isDataAnalyst = value;
+                  });
+                },
+                child: buildAnimatedContainer(
+                  link: '',
+                  description: '',
+                  title: 'Digital Marketing',
+                  asset: AppAssets.p3,
+                  hover: isDataAnalyst,
+                ),
+              )
+            ],
+          ),
         ],
       ),
-      paddingWidth: size.width * 0.1,
-      bgColor: Appcolors.bgColor2,
-    );
-  }
-}
-  /*
-  GridView buildProjectGridView({required int crossAxisCount}) {
-    return GridView.builder(
-    itemCount: images.length,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: crossAxisCount,
-        mainAxisExtent: 280,
-        mainAxisSpacing: 24,
-        crossAxisSpacing: 24,
-      ),
-      itemBuilder: (context, index) {
-       var image = images[index];
-        return FadeInUpBig(
-          duration: const Duration(milliseconds: 1600),
-          child: InkWell(
-            onTap: () {},
-            onHover: (value) {
-              setState(() {
-                if (value) {
-                  hoveredIndex = index;
-                } else {
-                  hoveredIndex = null;
-                }
-              });
-            },
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                        image: AssetImage(image), fit: BoxFit.fill),
-                  ),
-                ),
-                Visibility(
-                  visible: index == hoveredIndex,
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 600),
-                    transform: index == hoveredIndex ? onH0verEffect : null,
-                    curve: Curves.easeIn,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 14, vertical: 16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                          colors: [
-                            Appcolors.co.withOpacity(1.0),
-                            Appcolors.co.withOpacity(0.9),
-                            Appcolors.co.withOpacity(0.8),
-                            Appcolors.co.withOpacity(0.6),
-                          ],
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter),
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          'App Development',
-                          style: AppTextStyles.ei(
-                              color: Colors.black87, fontSize: 5),
-                        ),
-                        Constants.sizedBox(height: 3.0),
-                        Text(
-                          'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                          style: AppTextStyles.h(),
-                          textAlign: TextAlign.center,
-                        ),
-                        Constants.sizedBox(height: 25.0),
-                        CircleAvatar(
-                          maxRadius: 25,
-                          backgroundColor: Colors.white,
-                          child: Image.asset(
-                            AppAssets.share,
-                            width: 25,
-                            height: 25,
-                            fit: BoxFit.fill,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
+      paddingWidth: size.width * 0.04,
+      bgColor: Appcolors.bgColor,
     );
   }
 
-  FadeInDown buildProjectText() {
+  FadeInDown buildMyServicesText() {
     return FadeInDown(
       duration: const Duration(milliseconds: 1200),
       child: RichText(
         text: TextSpan(
-          text: 'Latest ',
+          text: 'My ',
           style: AppTextStyles.ei(fontSize: 30.0),
           children: [
             TextSpan(
-              text: 'Projects',
+              text: 'Services',
               style: AppTextStyles.ei(
-                  fontSize: 30, color: Appcolors.robinEdgeBlue),
+                  fontSize: 30.0, color: Appcolors.robinEdgeBlue),
             )
           ],
         ),
       ),
     );
-    }
-    }
-  */
+  }
+
+  AnimatedContainer buildAnimatedContainer({
+    required String title,
+    required String asset,
+    required bool hover,
+    double width = 350,
+    double hoverWidth = 360,
+    required description,
+    required String link,
+  }) {
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      width: hover ? hoverWidth : width,
+      height: 500,
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 24),
+      decoration: BoxDecoration(
+        color: Appcolors.bgColor2,
+        borderRadius: BorderRadius.circular(30),
+        border: hover ? Border.all(color: Appcolors.co, width: 3) : null,
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black54,
+            spreadRadius: 4.0,
+            blurRadius: 4.5,
+            offset: Offset(3.0, 4.5),
+          )
+        ],
+      ),
+      child: Container(
+        height: 2000,
+        child: Column(
+          children: [
+            Image.asset(
+              asset,
+              width: 80,
+              height: 100,
+              // color: Appcolors.co,
+            ),
+            Constants.sizedBox(height: 28.0),
+
+            Text(
+              title,
+              style: AppTextStyles.ei(color: Colors.white, fontSize: 22.0),
+            ),
+
+            Constants.sizedBox(height: 5.0),
+            Text(
+              description,
+              style: AppTextStyles.h(),
+              textAlign: TextAlign.center,
+            ),
+            Constants.sizedBox(height: 15.0),
+            AppButtons.buildMaterialButton(
+                buttonName: 'Read More', onTap: () {}),
+            //=> launchUrl(link))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> launchURL({required String url}) async {
+  // const url =
+  //   'https://drive.google.com/file/d/1V_dgikOvorZBzhFAt5cqShijqtTg6hfv/view?usp=share_link';
+  if (!await launchUrl(Uri.parse(url))) throw 'Could not launch $url';
+}
