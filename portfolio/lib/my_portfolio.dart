@@ -223,7 +223,7 @@ class _MyPortfolioState extends State<MyPortfolio> {
           style: AppTextStyles.ei(fontSize: 30.0),
           children: [
             TextSpan(
-              text: 'Services',
+              text: 'Projects',
               style: AppTextStyles.ei(
                   fontSize: 30.0, color: Appcolors.robinEdgeBlue),
             )
@@ -286,7 +286,7 @@ class _MyPortfolioState extends State<MyPortfolio> {
             ),
             Constants.sizedBox(height: 15.0),
             AppButtons.buildMaterialButton(
-                buttonName: 'Read More', onTap: () {}),
+                buttonName: 'Read More', onTap: () => launchURL(url: link)),
             //=> launchUrl(link))
           ],
         ),

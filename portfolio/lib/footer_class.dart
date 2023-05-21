@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/app_colors.dart';
+import 'package:portfolio/app_text_styles.dart';
+import 'package:portfolio/main.dart';
+import 'package:portfolio/main_dashboard.dart';
+import 'app_colors.dart';
 
 class FooterClass extends StatelessWidget {
   const FooterClass({
@@ -11,12 +14,31 @@ class FooterClass extends StatelessWidget {
     return Container(
       height: 70,
       width: MediaQuery.of(context).size.width,
-      color: Appcolors.bgColor2,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: Appcolors.bgColor),
       alignment: Alignment.centerRight,
       padding: const EdgeInsets.symmetric(
-        horizontal: 40,
+        horizontal: 30,
       ),
-      child: Text('Developed by Vaishnavi'),
+      child: Row(
+        children: [
+          Text(
+            'Developen by Vaishnavi',
+            style: AppTextStyles.h(),
+          ),
+          SizedBox(
+            width: 30,
+          ),
+          GestureDetector(
+            child: IconButton(
+              onPressed: () => MainDashBoard(),
+              icon: Icon(Icons.arrow_upward),
+              iconSize: 25,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

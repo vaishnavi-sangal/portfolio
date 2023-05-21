@@ -63,7 +63,7 @@ class AboutMe extends StatelessWidget {
               style: AppTextStyles.ei(fontSize: 30.0),
               children: [
                 TextSpan(
-                  text: 'Me!',
+                  text: 'Me !',
                   style: AppTextStyles.ei(
                       fontSize: 30, color: Appcolors.robinEdgeBlue),
                 )
@@ -75,7 +75,7 @@ class AboutMe extends StatelessWidget {
         FadeInLeft(
           duration: const Duration(milliseconds: 1400),
           child: Text(
-            'Flutter Developer!',
+            'Flutter Developer !',
             style: AppTextStyles.e(color: Colors.white),
           ),
         ),

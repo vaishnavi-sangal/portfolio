@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
         FadeInRight(
           duration: const Duration(milliseconds: 1400),
           child: Text(
-            'Vaishnavi Sangal',
+            'Vaishnavi',
             style: AppTextStyles.ei(),
           ),
         ),
@@ -152,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.github),
                     color: Color(0xffa8b2d1),
-                    iconSize: 30.0,
+                    iconSize: 25.0,
                     onPressed: () =>
                         launchURL(url: "https://github.com/vaishnavi-sangal"),
                   ),

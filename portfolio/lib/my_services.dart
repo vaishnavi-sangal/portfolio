@@ -36,31 +36,6 @@ class _MyServicesState extends State<MyServices> {
               children: [
                 buildAnimatedContainer(
                   width: 150,
-                  title: 'HTML',
-                  asset: AppAssets.html,
-                  hover: isApp,
-                ),
-                SizedBox(width: 20),
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'CSS',
-                  asset: AppAssets.css,
-                  hover: isGraphic,
-                ),
-                SizedBox(width: 20),
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'Figma',
-                  asset: AppAssets.figma,
-                  hover: isGraphic,
-                ),
-              ],
-            ),
-            Constants.sizedBox(height: 24.0),
-            Row(
-              children: [
-                buildAnimatedContainer(
-                  width: 150,
                   title: 'C++',
                   asset: AppAssets.c,
                   hover: isApp,
@@ -75,7 +50,7 @@ class _MyServicesState extends State<MyServices> {
                 SizedBox(width: 20),
                 buildAnimatedContainer(
                   width: 150,
-                  title: 'Pyhton',
+                  title: 'Python',
                   asset: AppAssets.py,
                   hover: isGraphic,
                 ),
@@ -86,18 +61,43 @@ class _MyServicesState extends State<MyServices> {
               children: [
                 buildAnimatedContainer(
                   width: 150,
-                  title: 'MySql',
-                  asset: AppAssets.mysql,
+                  title: 'HTML',
+                  asset: AppAssets.html,
                   hover: isApp,
                 ),
                 SizedBox(width: 20),
                 buildAnimatedContainer(
                   width: 150,
-                  title: 'Github',
-                  asset: AppAssets.github,
+                  title: 'CSS',
+                  asset: AppAssets.css,
                   hover: isGraphic,
                 ),
                 SizedBox(width: 20),
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'MySql',
+                  asset: AppAssets.mysql,
+                  hover: isApp,
+                ),
+              ],
+            ),
+            Constants.sizedBox(height: 24.0),
+            Row(
+              children: [
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'Flutter',
+                  asset: AppAssets.flutter,
+                  hover: isApp,
+                ),
+                SizedBox(width: 7),
+                buildAnimatedContainer(
+                  width: 150,
+                  title: 'Firebase',
+                  asset: AppAssets.firebase,
+                  hover: isGraphic,
+                ),
+                SizedBox(width: 7),
                 buildAnimatedContainer(
                   width: 150,
                   title: 'Dart',
@@ -115,15 +115,8 @@ class _MyServicesState extends State<MyServices> {
                 children: [
                   buildAnimatedContainer(
                     width: 150,
-                    title: 'Flutter',
-                    asset: AppAssets.flutter,
-                    hover: isApp,
-                  ),
-                  SizedBox(width: 20),
-                  buildAnimatedContainer(
-                    width: 150,
-                    title: 'Firebase',
-                    asset: AppAssets.firebase,
+                    title: 'Github',
+                    asset: AppAssets.github,
                     hover: isGraphic,
                   ),
                   SizedBox(width: 20),
@@ -134,6 +127,13 @@ class _MyServicesState extends State<MyServices> {
                       asset: AppAssets.vs,
                       hover: isGraphic,
                     ),
+                  ),
+                  SizedBox(width: 20),
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'Figma',
+                    asset: AppAssets.figma,
+                    hover: isGraphic,
                   ),
                 ],
               ),
