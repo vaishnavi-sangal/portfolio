@@ -149,40 +149,62 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  IconButton(
-                    icon: FaIcon(FontAwesomeIcons.github),
-                    color: Color(0xffa8b2d1),
-                    iconSize: 25.0,
-                    onPressed: () =>
-                        launchURL(url: "https://github.com/vaishnavi-sangal"),
+                  GestureDetector(
+                    child: IconButton(
+                      icon: FaIcon(FontAwesomeIcons.github),
+                      color: Color(0xffa8b2d1),
+                      iconSize: 25.0,
+                      onPressed: () =>
+                          launchURL(url: "https://github.com/vaishnavi-sangal"),
+                    ),
                   ),
-                  IconButton(
-                    icon: FaIcon(FontAwesomeIcons.twitter),
-                    color: Color(0xffa8b2d1),
-                    iconSize: 30.0,
-                    onPressed: () =>
-                        launchURL(url: "https://twitter.com/VaishnaviSangal"),
+                  SizedBox(
+                    width: 15,
                   ),
-                  IconButton(
-                    icon: FaIcon(FontAwesomeIcons.linkedin),
-                    color: Color(0xffa8b2d1),
-                    onPressed: () => launchURL(
-                        url:
-                            "https://www.linkedin.com/in/vaishnavi-sangal-b3777a203/"),
-                    iconSize: 30.0,
+                  GestureDetector(
+                    child: IconButton(
+                      icon: FaIcon(FontAwesomeIcons.twitter),
+                      color: Color(0xffa8b2d1),
+                      iconSize: 30.0,
+                      onPressed: () =>
+                          launchURL(url: "https://twitter.com/VaishnaviSangal"),
+                    ),
                   ),
-                  IconButton(
-                    icon: Icon(Icons.call),
-                    color: Color(0xffa8b2d1),
-                    // color: Color(0xffffA8B2D1),
-                    iconSize: 30.0,
-                    onPressed: () => launchCaller(),
+                  SizedBox(
+                    width: 15,
                   ),
-                  IconButton(
-                    icon: Icon(Icons.mail),
-                    color: Color(0xffa8b2d1),
-                    iconSize: 30.0,
-                    onPressed: () => launchEmail(),
+                  GestureDetector(
+                    child: IconButton(
+                      icon: FaIcon(FontAwesomeIcons.linkedin),
+                      color: Color(0xffa8b2d1),
+                      onPressed: () => launchURL(
+                          url:
+                              "https://www.linkedin.com/in/vaishnavi-sangal-b3777a203/"),
+                      iconSize: 30.0,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  GestureDetector(
+                    child: IconButton(
+                      icon: Icon(Icons.call),
+                      color: Color(0xffa8b2d1),
+                      // color: Color(0xffffA8B2D1),
+                      iconSize: 30.0,
+                      onPressed: () => launchCaller(),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  GestureDetector(
+                    child: IconButton(
+                      icon: Icon(Icons.mail),
+                      color: Color(0xffa8b2d1),
+                      iconSize: 30.0,
+                      onPressed: () => launchEmail(),
+                    ),
                   ),
                 ],
               ),
