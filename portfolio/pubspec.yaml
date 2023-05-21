@@ -41,6 +41,7 @@ dependencies:
   scrollable_positioned_list: ^0.3.8
   url_launcher: ^6.1.11
   font_awesome_flutter: ^10.4.0
+  flutter_phone_direct_caller: ^2.1.1
 
 dev_dependencies:
   flutter_test:

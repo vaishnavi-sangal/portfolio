@@ -7,6 +7,7 @@ import 'package:portfolio/app_text_styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'method.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 import 'about_me.dart';
 import 'app_buttons.dart';
@@ -89,8 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  final Uri _url =
-      Uri.parse('https://www.linkedin.com/in/vaishnavi-sangal-b3777a203/');
   Column buildHomePersonalInfo(Size size) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,57 +138,46 @@ class _MyHomePageState extends State<MyHomePage> {
         Constants.sizedBox(height: 15.0),
         Row(
           children: [
-            //Social Icon
-            Container(
-              width: size.width * 0.20,
-              height: size.height * 0.01,
+            SizedBox(
+              width: size.width * 0.7,
+              height: size.height * 0.02,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.github),
-                    color: Color(0xffffA8B2D1),
+                    color: Color(0xffa8b2d1),
                     iconSize: 30.0,
                     onPressed: () =>
                         launchURL(url: "https://github.com/vaishnavi-sangal"),
                   ),
-                  // onPressed: () {
-                  // method.launchURL("https://github.com/vaishnavi-sangal");
-                  //  }),
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.twitter),
-                    color: Color(0xffffA8B2D1),
+                    color: Color(0xffa8b2d1),
                     iconSize: 30.0,
                     onPressed: () =>
                         launchURL(url: "https://twitter.com/VaishnaviSangal"),
                   ),
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.linkedin),
-                    color: Color(0xffffA8B2D1),
-                    onPressed: null,
+                    color: Color(0xffa8b2d1),
+                    onPressed: () => launchURL(
+                        url:
+                            "https://www.linkedin.com/in/vaishnavi-sangal-b3777a203/"),
                     iconSize: 30.0,
                   ),
                   IconButton(
-                      icon: Icon(Icons.call),
-                      // color: Color(0xffffA8B2D1),
-                      iconSize: 30.0,
-                      onPressed: () {
-                        method.launchCaller();
-                      }),
+                    icon: Icon(Icons.call),
+                    color: Color(0xffa8b2d1),
+                    // color: Color(0xffffA8B2D1),
+                    iconSize: 30.0,
+                    onPressed: () => launchCaller(),
+                  ),
                   IconButton(
-                      icon: Icon(Icons.mail),
-                      color: Color(0xffffA8B2D1),
-                      iconSize: 30.0,
-                      onPressed: () {
-                        method.launchEmail();
-                      }),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16.0),
-                    child: Container(
-                      height: size.height * 0.20,
-                      width: 2,
-                      color: Colors.grey.withOpacity(0.4),
-                    ),
+                    icon: Icon(Icons.mail),
+                    color: Color(0xffa8b2d1),
+                    iconSize: 30.0,
+                    onPressed: () => launchEmail(),
                   ),
                 ],
               ),
@@ -230,7 +218,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),*/
           ],
         ),
-        Constants.sizedBox(height: 40.0),
+        SizedBox(height: 40.0),
         FadeInUp(
           duration: const Duration(milliseconds: 1800),
           child: AppButtons.buildMaterialButton(
@@ -248,11 +236,24 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> launchURL({required String url}) async {
     // const url =
     //   'https://drive.google.com/file/d/1V_dgikOvorZBzhFAt5cqShijqtTg6hfv/view?usp=share_link';
-    if (!await launchUrl(Uri.parse(url),
-        mode: LaunchMode.externalApplication)) {
-      throw 'Could not launch $url';
-    }
+    if (!await launchUrl(Uri.parse(url))) throw 'Could not launch $url';
   }
+}
+
+launchCaller() async {
+  const url = "tel:8979043181";
+  if (!await launchUrl(Uri.parse(url))) {
+    throw 'Could not launch $url';
+  }
+}
+
+launchEmail() async {
+  const url = "mailto:vaishnavisangal787@gmail.com";
+  if (!await launchUrl(Uri.parse(url))) {
+    throw 'Could not launch $url';
+  }
+}
+
   /* Future<void> _launchURL(urli) async {
     var url = urli;
     //const url =
@@ -274,7 +275,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }*/
 
-  Ink buildSocialButton({required String asset, required bool hover}) {
+ /* Ink buildSocialButton({required String asset, required bool hover}) {
     return Ink(
       width: 45,
       height: 45,
@@ -293,7 +294,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-}
+}*/
     /*final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Appcolors.bgColor,
