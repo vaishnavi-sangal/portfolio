@@ -123,7 +123,7 @@ class _MyServicesState extends State<MyServices> {
               width: double.infinity,
               child: Row(
                 //
-                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   buildAnimatedContainer(
                     width: 150,
