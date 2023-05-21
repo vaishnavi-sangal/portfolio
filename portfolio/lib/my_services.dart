@@ -132,13 +132,11 @@ class _MyServicesState extends State<MyServices> {
                     hover: isGraphic,
                   ),
                   SizedBox(width: 20),
-                  Flexible(
-                    child: buildAnimatedContainer(
-                      width: 150,
-                      title: 'VS Code',
-                      asset: AppAssets.vs,
-                      hover: isGraphic,
-                    ),
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'VS Code',
+                    asset: AppAssets.vs,
+                    hover: isGraphic,
                   ),
                   SizedBox(width: 20),
                   buildAnimatedContainer(
