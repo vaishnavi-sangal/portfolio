@@ -63,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final Size size = MediaQuery.of(context).size;
     return HelperClass(
       mobile: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           buildHomePersonalInfo(size),
           Constants.sizedBox(height: 25.0),
@@ -85,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const ProfileAnimation(),
         ],
       ),
-      paddingWidth: size.width * 0.1,
+      paddingWidth: size.width * 0.2,
       bgColor: Colors.transparent,
     );
   }
@@ -115,22 +116,26 @@ class _MyHomePageState extends State<MyHomePage> {
           duration: const Duration(milliseconds: 1400),
           child: Row(
             children: [
-              Text(
-                'And I\'m a ',
-                style: AppTextStyles.e(color: Colors.white),
+              Flexible(
+                child: Text(
+                  'And I\'m a ',
+                  style: AppTextStyles.e(color: Colors.white),
+                ),
               ),
-              AnimatedTextKit(
-                animatedTexts: [
-                  TyperAnimatedText(
-                    'Flutter Developer',
-                    textStyle: AppTextStyles.e(color: Colors.lightBlue),
-                  ),
-                  TyperAnimatedText('Learner',
-                      textStyle: AppTextStyles.e(color: Colors.lightBlue)),
-                ],
-                pause: const Duration(milliseconds: 1000),
-                displayFullTextOnTap: true,
-                stopPauseOnTap: true,
+              Flexible(
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    TyperAnimatedText(
+                      'Flutter Developer',
+                      textStyle: AppTextStyles.e(color: Colors.lightBlue),
+                    ),
+                    TyperAnimatedText('Learner',
+                        textStyle: AppTextStyles.e(color: Colors.lightBlue)),
+                  ],
+                  pause: const Duration(milliseconds: 1000),
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: true,
+                ),
               )
             ],
           ),
@@ -139,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Row(
           children: [
             SizedBox(
-              width: size.width * 0.7,
+              width: size.width * 0.9,
               height: size.height * 0.02,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,

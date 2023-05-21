@@ -19,15 +19,6 @@ class MyPortfolio extends StatefulWidget {
 class _MyPortfolioState extends State<MyPortfolio> {
   final onH0verEffect = Matrix4.identity()..scale(1.0);
 
-  List images = <String>[
-    AppAssets.work1,
-    AppAssets.work2,
-    AppAssets.work1,
-    AppAssets.work2,
-    AppAssets.work1,
-    AppAssets.work2,
-  ];
-
   var hoveredIndex;
 
   @override
@@ -37,35 +28,36 @@ class _MyPortfolioState extends State<MyPortfolio> {
       mobile: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          buildProjectText(),
+          // buildProjectText(),
           Constants.sizedBox(height: 40.0),
-          buildProjectGridView(crossAxisCount: 1)
+          // buildProjectGridView(crossAxisCount: 1)
         ],
       ),
       tablet: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          buildProjectText(),
+          //buildProjectText(),
           Constants.sizedBox(height: 40.0),
-          buildProjectGridView(crossAxisCount: 2)
+          // buildProjectGridView(crossAxisCount: 2)
         ],
       ),
       desktop: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          buildProjectText(),
+          //  buildProjectText(),
           Constants.sizedBox(height: 40.0),
-          buildProjectGridView(crossAxisCount: 3),
+          //  buildProjectGridView(crossAxisCount: 3),
         ],
       ),
       paddingWidth: size.width * 0.1,
       bgColor: Appcolors.bgColor2,
     );
   }
-
+}
+  /*
   GridView buildProjectGridView({required int crossAxisCount}) {
     return GridView.builder(
-      itemCount: images.length,
+    itemCount: images.length,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -75,7 +67,7 @@ class _MyPortfolioState extends State<MyPortfolio> {
         crossAxisSpacing: 24,
       ),
       itemBuilder: (context, index) {
-        var image = images[index];
+       var image = images[index];
         return FadeInUpBig(
           duration: const Duration(milliseconds: 1600),
           child: InkWell(
@@ -172,5 +164,6 @@ class _MyPortfolioState extends State<MyPortfolio> {
         ),
       ),
     );
-  }
-}
+    }
+    }
+  */
