@@ -32,79 +32,91 @@ class _MyServicesState extends State<MyServices> {
           children: [
             buildMyServicesText(),
             Constants.sizedBox(height: 60.0),
-            Row(
-              children: [
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'C++',
-                  asset: AppAssets.c,
-                  hover: isApp,
-                ),
-                SizedBox(width: 20),
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'Java',
-                  asset: AppAssets.java,
-                  hover: isGraphic,
-                ),
-                SizedBox(width: 20),
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'Python',
-                  asset: AppAssets.py,
-                  hover: isGraphic,
-                ),
-              ],
+            Container(
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'C++',
+                    asset: AppAssets.c,
+                    hover: isApp,
+                  ),
+                  SizedBox(width: 20),
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'Java',
+                    asset: AppAssets.java,
+                    hover: isGraphic,
+                  ),
+                  SizedBox(width: 20),
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'Python',
+                    asset: AppAssets.py,
+                    hover: isGraphic,
+                  ),
+                ],
+              ),
             ),
             Constants.sizedBox(height: 24.0),
-            Row(
-              children: [
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'HTML',
-                  asset: AppAssets.html,
-                  hover: isApp,
-                ),
-                SizedBox(width: 20),
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'CSS',
-                  asset: AppAssets.css,
-                  hover: isGraphic,
-                ),
-                SizedBox(width: 20),
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'MySql',
-                  asset: AppAssets.mysql,
-                  hover: isApp,
-                ),
-              ],
+            Container(
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'HTML',
+                    asset: AppAssets.html,
+                    hover: isApp,
+                  ),
+                  SizedBox(width: 20),
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'CSS',
+                    asset: AppAssets.css,
+                    hover: isGraphic,
+                  ),
+                  SizedBox(width: 20),
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'MySql',
+                    asset: AppAssets.mysql,
+                    hover: isApp,
+                  ),
+                ],
+              ),
             ),
             Constants.sizedBox(height: 24.0),
-            Row(
-              children: [
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'Flutter',
-                  asset: AppAssets.flutter,
-                  hover: isApp,
-                ),
-                SizedBox(width: 7),
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'Firebase',
-                  asset: AppAssets.firebase,
-                  hover: isGraphic,
-                ),
-                SizedBox(width: 7),
-                buildAnimatedContainer(
-                  width: 150,
-                  title: 'Dart',
-                  asset: AppAssets.dart,
-                  hover: isGraphic,
-                ),
-              ],
+            Container(
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'Flutter',
+                    asset: AppAssets.flutter,
+                    hover: isApp,
+                  ),
+                  SizedBox(width: 20),
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'Firebase',
+                    asset: AppAssets.firebase,
+                    hover: isGraphic,
+                  ),
+                  SizedBox(width: 20),
+                  buildAnimatedContainer(
+                    width: 150,
+                    title: 'Dart',
+                    asset: AppAssets.dart,
+                    hover: isGraphic,
+                  ),
+                ],
+              ),
             ),
             Constants.sizedBox(height: 24.0),
             Container(
