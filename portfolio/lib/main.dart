@@ -150,66 +150,59 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   GestureDetector(
-                    child: IconButton(
-                      icon: FaIcon(FontAwesomeIcons.github),
+                    onTap: () =>
+                        launchURL(url: "https://github.com/vaishnavi-sangal"),
+                    child: const Icon(
+                      FontAwesomeIcons.github,
                       color: Color(0xffa8b2d1),
-                      iconSize: 25.0,
-                      onPressed: () =>
-                          launchURL(url: "https://github.com/vaishnavi-sangal"),
+                      size: 30.0,
                     ),
                   ),
-                  SizedBox(
-                    width: 15,
-                  ),
+                  const SizedBox(width: 10.0),
                   GestureDetector(
-                    child: IconButton(
-                      icon: FaIcon(FontAwesomeIcons.twitter),
+                    onTap: () =>
+                        launchURL(url: "https://twitter.com/VaishnaviSangal"),
+                    child: const Icon(
+                      FontAwesomeIcons.twitter,
                       color: Color(0xffa8b2d1),
-                      iconSize: 30.0,
-                      onPressed: () =>
-                          launchURL(url: "https://twitter.com/VaishnaviSangal"),
+                      size: 30.0,
                     ),
                   ),
-                  SizedBox(
-                    width: 15,
-                  ),
+                  const SizedBox(width: 10.0),
                   GestureDetector(
-                    child: IconButton(
-                      icon: FaIcon(FontAwesomeIcons.linkedin),
+                    onTap: () => launchURL(
+                        url:
+                            "https://www.linkedin.com/in/vaishnavi-sangal-b3777a203/"),
+                    child: const Icon(
+                      FontAwesomeIcons.linkedin,
                       color: Color(0xffa8b2d1),
-                      onPressed: () => launchURL(
-                          url:
-                              "https://www.linkedin.com/in/vaishnavi-sangal-b3777a203/"),
-                      iconSize: 30.0,
+                      size: 30.0,
                     ),
                   ),
-                  SizedBox(
-                    width: 15,
-                  ),
+                  const SizedBox(width: 10.0),
                   GestureDetector(
-                    child: IconButton(
-                      icon: Icon(Icons.call),
+                    onTap: () => launchCaller(),
+                    child: const Icon(
+                      Icons.call,
                       color: Color(0xffa8b2d1),
-                      // color: Color(0xffffA8B2D1),
-                      iconSize: 30.0,
-                      onPressed: () => launchCaller(),
+                      size: 30.0,
                     ),
                   ),
-                  SizedBox(
-                    width: 15,
-                  ),
+                  const SizedBox(width: 10.0),
                   GestureDetector(
-                    child: IconButton(
-                      icon: Icon(Icons.mail),
+                    onTap: () => launchEmail(),
+                    child: const Icon(
+                      Icons.mail,
                       color: Color(0xffa8b2d1),
-                      iconSize: 30.0,
-                      onPressed: () => launchEmail(),
+                      size: 30.0,
                     ),
                   ),
                 ],
               ),
             ),
-            /*
+          ],
+        ),
+        /*
             FadeInUp(
               duration: const Duration(milliseconds: 1600),
               child: SizedBox(
@@ -243,8 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),*/
-          ],
-        ),
+
         SizedBox(height: 40.0),
         FadeInUp(
           duration: const Duration(milliseconds: 1800),
