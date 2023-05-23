@@ -30,6 +30,12 @@ class FooterClass extends StatelessWidget {
           GestureDetector(
             child: InkWell(
               onTap: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => const MainDashBoard()),
+                  (Route<dynamic> route) => false,
+                );
                 Navigator.push(
                     context,
                     MaterialPageRoute(

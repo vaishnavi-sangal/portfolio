@@ -71,7 +71,7 @@ class AboutMe extends StatelessWidget {
             ),
           ),
         ),
-        Constants.sizedBox(height: 6.0),
+        Constants.sizedBox(height: 10.0),
         FadeInLeft(
           duration: const Duration(milliseconds: 1400),
           child: Text(
