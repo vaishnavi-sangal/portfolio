@@ -158,49 +158,60 @@ class _MyPortfolioState extends State<MyPortfolio> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Constants.sizedBox(width: 20.0),
               InkWell(
-                onTap: () {},
+                onTap: () => launchURL(
+                    url:
+                        'https://drive.google.com/file/d/1dnnAlnJilQo0ArU9NXctP1PmiCcfJgcN/view'),
                 onHover: (value) {
                   setState(() {
                     isApp = value;
                   });
                 },
                 child: buildAnimatedContainer(
-                  link: '',
-                  description: '',
-                  title: 'App Development',
+                  link:
+                      'https://drive.google.com/file/d/1dnnAlnJilQo0ArU9NXctP1PmiCcfJgcN/view',
+                  description:
+                      'It is a Women Security App that lets them take a leap that they can count on someone and I made sure that “SOMEONE” will be none other but their own contacts which they can send alerts, locations, and much more.',
+                  title: 'Women Security App',
                   asset: AppAssets.p1,
                   hover: isApp,
                 ),
               ),
-              Constants.sizedBox(width: 24.0),
+              Constants.sizedBox(width: 20.0),
               InkWell(
-                onTap: () {},
+                onTap: () => launchURL(
+                    url:
+                        'https://github.com/vaishnavi-sangal/TMDB_API/tree/main/movie_app'),
                 onHover: (value) {
                   setState(() {
                     isGraphic = value;
                   });
                 },
                 child: buildAnimatedContainer(
-                  link: '',
-                  description: '',
-                  title: 'Graphic Designing',
+                  link:
+                      'https://github.com/vaishnavi-sangal/TMDB_API/tree/main/movie_app',
+                  description:
+                      'A movie app which fetches data from TMDB_API to show the trending movies,tv shows and top rated movies.',
+                  title: 'Movie App',
                   asset: AppAssets.p2,
                   hover: isGraphic,
                 ),
               ),
-              Constants.sizedBox(width: 24.0),
+              Constants.sizedBox(width: 20.0),
               InkWell(
-                onTap: () {},
+                onTap: () => launchURL(
+                    url: 'https://github.com/vaishnavi-sangal/instagram'),
                 onHover: (value) {
                   setState(() {
                     isDataAnalyst = value;
                   });
                 },
                 child: buildAnimatedContainer(
-                  link: '',
-                  description: '',
-                  title: 'Digital Marketing',
+                  link: 'https://github.com/vaishnavi-sangal/instagram',
+                  description:
+                      'This is Open Source Instagram Clone made using Flutter and Firebase.',
+                  title: 'Picstagram',
                   asset: AppAssets.p3,
                   hover: isDataAnalyst,
                 ),

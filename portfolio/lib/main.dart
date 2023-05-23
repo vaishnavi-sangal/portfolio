@@ -79,14 +79,14 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       desktop: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(child: buildHomePersonalInfo(size)),
-          const ProfileAnimation(),
+          Expanded(child: const ProfileAnimation()),
         ],
       ),
-      paddingWidth: size.width * 0.2,
+      paddingWidth: size.width * 0.1,
       bgColor: Colors.transparent,
     );
   }
@@ -144,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Row(
           children: [
             SizedBox(
-              width: size.width * 0.9,
+              width: size.width * 0.4,
               height: size.height * 0.02,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -158,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       size: 30.0,
                     ),
                   ),
-                  const SizedBox(width: 10.0),
+                  const SizedBox(width: 30.0),
                   GestureDetector(
                     onTap: () =>
                         launchURL(url: "https://twitter.com/VaishnaviSangal"),
@@ -168,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       size: 30.0,
                     ),
                   ),
-                  const SizedBox(width: 10.0),
+                  const SizedBox(width: 35.0),
                   GestureDetector(
                     onTap: () => launchURL(
                         url:
@@ -179,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       size: 30.0,
                     ),
                   ),
-                  const SizedBox(width: 10.0),
+                  const SizedBox(width: 30.0),
                   GestureDetector(
                     onTap: () => launchCaller(),
                     child: const Icon(
@@ -188,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       size: 30.0,
                     ),
                   ),
-                  const SizedBox(width: 10.0),
+                  const SizedBox(width: 30.0),
                   GestureDetector(
                     onTap: () => launchEmail(),
                     child: const Icon(
