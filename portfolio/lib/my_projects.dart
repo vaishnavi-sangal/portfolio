@@ -156,7 +156,7 @@ class _MyPortfolioState extends State<MyPortfolio> {
           buildMyServicesText(),
           Constants.sizedBox(height: 60.0),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Constants.sizedBox(width: 20.0),
               InkWell(

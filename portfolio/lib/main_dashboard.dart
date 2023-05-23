@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/about_me.dart';
 import 'package:portfolio/contact_us.dart';
 import 'package:portfolio/footer_class.dart';
-import 'package:portfolio/my_services.dart';
+import 'package:portfolio/my_skills.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import '../app_colors.dart';
 import '../app_text_styles.dart';
 import '../constants.dart';
 import 'main.dart';
-import 'my_portfolio.dart';
+import 'my_projects.dart';
 
 class MainDashBoard extends StatefulWidget {
   const MainDashBoard({Key? key}) : super(key: key);
